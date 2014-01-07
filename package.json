@@ -6,6 +6,10 @@
   "scripts": {
     "test": "nodeunit test/test-iron-payload-parser.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mallzee/iron-payload-parser"
+  },
   "keywords": [
     "iron.io",
     "parse",

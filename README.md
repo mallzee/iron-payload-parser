@@ -1,6 +1,6 @@
 #Iron.io Payload Parser
 -----
-A utility to help parse the payload given to an Iron.io worker. Required and optional variables can be specified.
+A utility to help parse the payload given to an Iron.io worker in Node.js. Required and optional variables can be specified.
 
 ##Installation
 -----
