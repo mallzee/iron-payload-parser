@@ -1,0 +1,30 @@
+{
+  "name": "iron-payload-parser",
+  "version": "0.0.1",
+  "description": "A utility to help parse the payload given to an iron.io worker. Options to enable the user to specify required and optional variables.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit test/test-iron-payload-parser.js"
+  },
+  "keywords": [
+    "iron.io",
+    "parse",
+    "payload",
+    "iron",
+    "worker",
+    "iron",
+    "optional",
+    "required"
+  ],
+  "author": "Ro Ramtohul <ro@mallzee.com>",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/caolan/async/raw/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "vargs": "~0.1.0",
+    "underscore": "~1.5.2"
+  }
+}
