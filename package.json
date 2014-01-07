@@ -1,6 +1,6 @@
 {
   "name": "iron-payload-parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A utility to help parse the payload given to an iron.io worker. Options to enable the user to specify required and optional variables.",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,6 @@
     "url": "https://github.com/mallzee/iron-payload-parser"
   },
   "main": "./lib/iron-payload-parser",
-
   "keywords": [
     "iron.io",
     "parse",
