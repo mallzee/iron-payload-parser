@@ -1,6 +1,16 @@
 var PayloadParser = require('../lib/iron-payload-parser');
 
-exports['required payload'] = function(test){
+exports['no payload loaded'] = function(test){
+
+    test.expect(1);
+    test.throws(function() {
+        var payload = PayloadParser(['differentRequiredVariable']);
+    }, Error, "The payload should throw because there is no payload");
+    test.done();
+};
+
+
+exports['required variable in payload'] = function(test){
 	// Set up the payload
     process.argv[3] = '-payload';
     process.argv[4] = process.cwd() + '/test/payloads/required-variable-payload.json';
@@ -20,7 +30,7 @@ exports['optional payload using default'] = function(test){
     process.argv[4] = process.cwd() + '/test/payloads/required-variable-payload.json';
 
     // Set up the parser
-    var payload = PayloadParser({optionalVariable:'default value'});
+    var payload = PayloadParser( {optionalVariable:'default value'} );
 
     test.expect(2);
     test.ok(payload.optionalVariable, "The payload should have an optional value");

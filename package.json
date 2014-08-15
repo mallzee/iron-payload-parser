@@ -1,6 +1,6 @@
 {
   "name": "iron-payload-parser",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A utility to help parse the payload given to an iron.io worker. Options to enable the user to specify required and optional variables.",
   "scripts": {
     "test": "nodeunit test/test-iron-payload-parser.js"
