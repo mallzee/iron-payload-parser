@@ -100,3 +100,20 @@ exports['variables are strings'] = function(test){
 	}, Error, "The payload should have rejected non-strings as keys");
     test.done();
 };
+
+exports['no parameters so returns full payload'] = function(test){
+    // Set up the payload
+    process.argv[3] = '-payload';
+    process.argv[4] = process.cwd() + '/test/payloads/required-variable-payload.json';
+
+    var payload = PayloadParser();
+
+    test.expect(4);
+
+    test.ok(payload.anOptionalVariable, "The payload should have an optional value");
+    test.strictEqual(payload.anOptionalVariable, 'an optional value', "The payload's optional key's value should be correct");
+
+    test.ok(payload.requiredVariable, "The payload should have a required value");
+    test.strictEqual(payload.requiredVariable, 'requiredValue', "The payload's required key's value should be correct");
+    test.done();
+};
