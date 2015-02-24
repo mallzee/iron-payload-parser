@@ -127,3 +127,29 @@ exports['no parameters so returns full payload'] = function(test){
     test.strictEqual(payload.requiredVariable, 'requiredValue', "The payload's required key's value should be correct");
     test.done();
 };
+
+exports['parameters as command line stringified JSON'] = function(test){
+    // Set up the payload
+    process.argv[3] = '-payload';
+    process.argv[4] = '{"fish":"chips"}';
+
+    var payload = PayloadParser(['fish']);
+    test.expect(2);
+
+    test.ok(payload.fish, "The payload should have a required value");
+    test.strictEqual(payload.fish, 'chips', "The payload's required key's value should be correct");
+    test.done();
+};
+
+exports['can\'t get parameters as command line stringified JSON'] = function(test){
+    // Set up the payload
+    process.argv[3] = '-payload';
+    process.argv[4] = '{"fish:"chips"}';
+
+    test.expect(1);
+    test.throws(function() {
+        var payload = PayloadParser(['fish']);
+    }, Error, "The payload should have thrown an error because no data can be parsed");
+    test.done();
+
+};
